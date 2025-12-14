@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package vision;
+
+service VisionService {
+  rpc Chat (VisionRequest) returns (VisionResponse);
+}
+
+message VisionRequest {
+  bytes image = 1;       // raw image bytes
+  string prompt = 2;
+}
+
+message VisionResponse {
+  string text = 1;
+}
